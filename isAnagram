@@ -1,0 +1,22 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function (s, t) {
+    let counter = {}
+
+    if(s.length !== t.length) return false
+    for (let letter of s) {
+        counter[letter] = (counter[letter] || 0) + 1
+    }
+    for (let letter of t) {
+        if (counter[letter]) {
+            counter[letter] = counter[letter] - 1
+        } else {
+            return false
+        }
+    }
+    return true
+
+};
