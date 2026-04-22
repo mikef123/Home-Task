@@ -1,0 +1,28 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function (s) {
+    const queue = [];
+    const map = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
+
+    for (let characther of s) {
+        if (characther === '(' || characther === '{' || characther === '[') {
+            queue.push(characther);
+        } else {
+            if (queue.length === 0) return false;
+
+            const top = queue.pop();
+            if (top !== map[characther]) {
+                return false;
+            }
+        }
+    }
+
+    if (queue.length > 0) return false;
+    return true;
+};
