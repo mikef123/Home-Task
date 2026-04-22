@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function (nums) {
+    if (nums.length === 0) return 0;
+
+    let unique = 0;
+
+    for (let number = 0; number < nums.length - 1; number++) {
+        if (nums[number] !== nums[number + 1]) {
+            nums[unique] = nums[number];
+            unique++;
+        }
+    }
+
+    nums[unique] = nums[nums.length - 1];
+
+    return unique + 1;
+};
