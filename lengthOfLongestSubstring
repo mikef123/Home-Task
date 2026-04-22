@@ -1,0 +1,26 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function (s) {
+    const map = {};
+    let left = 0;
+    let lengthSubstring = 0;
+
+    for (let right = 0; right < s.length; right++) {
+        const subString = s[right];
+
+        if (subString in map && map[subString] >= left) {
+            left = map[subString] + 1;
+        }
+
+        map[subString] = right;
+
+        const currentLength = right - left + 1;
+        if (currentLength > lengthSubstring) {
+            lengthSubstring = currentLength;
+        }
+    }
+
+    return lengthSubstring;
+};
