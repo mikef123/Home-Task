@@ -27,3 +27,11 @@ var lengthOfLongestSubstring = function (s) {
 
   return lengthSubstring
 }
+
+console.assert(lengthOfLongestSubstring('abcabcbb') === 3, 'Test 1 failed')
+console.assert(lengthOfLongestSubstring('bbbbb') === 1, 'Test 2 failed')
+console.assert(lengthOfLongestSubstring('pwwkew') === 3, 'Test 3 failed')
+console.assert(lengthOfLongestSubstring('') === 0, 'Test 4 failed')
+console.assert(lengthOfLongestSubstring('au') === 2, 'Test 5 failed')
+
+console.log('lengthOfLongestSubstring: all cases passed')
